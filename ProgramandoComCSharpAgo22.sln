@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo01.ValeTrans
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.GeradorSenha", "CSharp.Capitulo02.GeradorSenha\CSharp.Capitulo02.GeradorSenha.csproj", "{2741DCA7-DF49-4ECE-8A4B-7E6DD730754B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.EstruturasControle.Testes", "CSharp.Capitulo02.EstruturasControle.Testes\CSharp.Capitulo02.EstruturasControle.Testes.csproj", "{567AA72E-2430-43B4-A76F-EA299E45DDF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2741DCA7-DF49-4ECE-8A4B-7E6DD730754B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2741DCA7-DF49-4ECE-8A4B-7E6DD730754B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2741DCA7-DF49-4ECE-8A4B-7E6DD730754B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567AA72E-2430-43B4-A76F-EA299E45DDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567AA72E-2430-43B4-A76F-EA299E45DDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567AA72E-2430-43B4-A76F-EA299E45DDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567AA72E-2430-43B4-A76F-EA299E45DDF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
