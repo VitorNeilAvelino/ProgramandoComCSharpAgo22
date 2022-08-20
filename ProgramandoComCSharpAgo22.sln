@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.GeradorSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.EstruturasControle.Testes", "CSharp.Capitulo02.EstruturasControle.Testes\CSharp.Capitulo02.EstruturasControle.Testes.csproj", "{567AA72E-2430-43B4-A76F-EA299E45DDF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo08.VetoresColecoes.Testes", "CSharp.Capitulo08.VetoresColecoes.Testes\CSharp.Capitulo08.VetoresColecoes.Testes.csproj", "{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{567AA72E-2430-43B4-A76F-EA299E45DDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{567AA72E-2430-43B4-A76F-EA299E45DDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{567AA72E-2430-43B4-A76F-EA299E45DDF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
