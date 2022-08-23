@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.Estrutura
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo08.VetoresColecoes.Testes", "CSharp.Capitulo08.VetoresColecoes.Testes\CSharp.Capitulo08.VetoresColecoes.Testes.csproj", "{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fintech", "Fintech", "{2AB239EF-8838-4B11-80FA-692ACA6D3865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Dominio", "Fintech.Dominio\Fintech.Dominio.csproj", "{B790DA08-4FF6-4E9E-A7ED-9FD161B6F710}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAEA89A6-AB21-4711-8E2F-2D0E8C98976D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B790DA08-4FF6-4E9E-A7ED-9FD161B6F710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B790DA08-4FF6-4E9E-A7ED-9FD161B6F710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B790DA08-4FF6-4E9E-A7ED-9FD161B6F710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B790DA08-4FF6-4E9E-A7ED-9FD161B6F710}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B790DA08-4FF6-4E9E-A7ED-9FD161B6F710} = {2AB239EF-8838-4B11-80FA-692ACA6D3865}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A74013D9-D356-4C39-B440-2FD68BA6972A}
