@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp.Capitulo02.GeradorSenha
 {
@@ -12,19 +8,20 @@ namespace CSharp.Capitulo02.GeradorSenha
 
         public Senha()
         {
-            Valor = Gerar();
+            //Valor = Gerar();
         }
 
         public Senha(int tamanho)
         {
             Tamanho = tamanho;
-            Valor = Gerar();
+            //Valor = Gerar();
         }
 
         public int Tamanho { get; set; } = TamanhoMinimo;
-        public string Valor { get; set; }
+        //public string Valor { get; }
+        public string Valor => Gerar();
 
-        public string Gerar()
+        private string Gerar()
         {
             var senha = "";
             var randomico = new Random();
