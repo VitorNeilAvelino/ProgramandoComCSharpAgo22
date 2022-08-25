@@ -21,7 +21,8 @@ namespace Fintech.Correntista.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Cliente> clientes = new List<Cliente>();
+        private List<Cliente> clientes = new List<Cliente>();
+        private Cliente clienteSelecionado;
 
         public MainWindow()
         {
@@ -36,6 +37,17 @@ namespace Fintech.Correntista.Wpf
             sexoComboBox.Items.Add(Sexo.Outros);
 
             clienteDataGrid.ItemsSource = clientes;
+
+            tipoContaComboBox.Items.Add(TipoConta.ContaCorrente);
+            tipoContaComboBox.Items.Add(TipoConta.ContaEspecial);
+            tipoContaComboBox.Items.Add(TipoConta.Poupanca);
+
+            var banco1 = new Banco();
+            banco1.Nome = "Banco Um";
+            banco1.Numero = 208;
+
+            bancoComboBox.Items.Add(banco1);
+            bancoComboBox.Items.Add(new Banco { Nome = "Banco Dois", Numero = 210 });
         }
 
         private void incluirClienteButton_Click(object sender, RoutedEventArgs e)
@@ -72,6 +84,32 @@ namespace Fintech.Correntista.Wpf
             numeroLogradouroTextBox.Clear();
             cidadeTextBox.Clear();
             cepTextBox.Clear();
+        }
+
+        private void SelecionarClienteButtonClick(object sender, RoutedEventArgs e)
+        {
+            var botaoClicado = (Button)sender;
+            clienteSelecionado = (Cliente)botaoClicado.DataContext;
+            //this.clienteSelecionado = (Cliente)clienteSelecionado;
+
+            clienteTextBox.Text = $"{clienteSelecionado.Nome} - {clienteSelecionado.Cpf}";
+
+            contasTabItem.Focus();
+        }
+
+        private void tipoContaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var tipoConta = (TipoConta)tipoContaComboBox.SelectedItem;
+
+            if (tipoConta == TipoConta.ContaEspecial)
+            {
+                limiteDockPanel.Visibility = Visibility.Visible;
+                limiteTextBox.Focus();
+            }
+            else
+            {
+                limiteDockPanel.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }
