@@ -7,11 +7,21 @@
         mc:Ignorable="d"
         Title="Fintech" WindowState="Maximized" d:DesignWidth="754.063" d:DesignHeight="329.062">
     <TabControl>
-        <TabItem Header="Clientes">
+        <TabItem Header="Clientes" Name="clienteTabItem">
             <TabControl TabStripPlacement="Left">
                 <TabItem Header="Pesquisa" Name="pesquisaClienteTabItem">
-                    <DataGrid x:Name="clienteDataGrid" AutoGenerateColumns="True">
+                    <DataGrid x:Name="clienteDataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                         <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nome" Binding="{Binding Path=Nome}"/>
+                            <DataGridTextColumn Header="CPF" Binding="{Binding Path=Cpf}"/>
+                            <DataGridTextColumn Header="Logradouro" Binding="{Binding Path=EnderecoResidencial.Logradouro}"/>
+                            <DataGridTemplateColumn Header="Contas">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox ItemsSource="{Binding Contas}" DisplayMemberPath="Numero"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -94,7 +104,7 @@
                     <TextBox Name="limiteTextBox" Width="150" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap" />
                 </DockPanel>
                 <DockPanel>
-                    <Button Name="incluirContaButton" Content="Incluir" Margin="120 2 0 0" Height="23" HorizontalAlignment="Left" Width="150"/>
+                    <Button Name="incluirContaButton" Content="Incluir" Margin="120 2 0 0" Height="23" HorizontalAlignment="Left" Width="150" Click="incluirContaButton_Click"/>
                 </DockPanel>
             </StackPanel>
         </TabItem>
