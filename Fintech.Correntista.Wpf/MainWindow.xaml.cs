@@ -1,4 +1,5 @@
 ﻿using Fintech.Dominio.Entidades;
+using Fintech.Repositorios.SistemaArquivos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -197,6 +198,24 @@ namespace Fintech.Correntista.Wpf
             var conta = (Conta)contaComboBox.SelectedItem;
 
             movimentacaoDataGrid.ItemsSource = conta.Movimentos;
+            saldoTextBox.Text = conta.Saldo.ToString();
+        }
+
+        private void incluirOperacaoButton_Click(object sender, RoutedEventArgs e)
+        {
+            var conta = (Conta)contaComboBox.SelectedItem;
+            var operacao = (Operacao)operacaoComboBox.SelectedItem;
+            var valor = Convert.ToDecimal(valorTextBox.Text);
+            //var valor = (decimal)valorTextBox.Text;
+
+            var movimento = conta.EfetuarOperacao(valor, operacao);
+
+            var repositorio = new MovimentoRepositorio();
+            repositorio.Inserir(movimento);
+
+            movimentacaoDataGrid.ItemsSource = conta.Movimentos;
+            movimentacaoDataGrid.Items.Refresh();
+
             saldoTextBox.Text = conta.Saldo.ToString();
         }
     }

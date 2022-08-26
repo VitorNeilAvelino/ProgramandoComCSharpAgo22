@@ -139,7 +139,7 @@
                 </DockPanel>
                 <DockPanel>
                     <Button Name="incluirOperacaoButton" Content="Incluir" Margin="120 2 0 0" Height="23"
-                            HorizontalAlignment="Left" Width="150" />
+                            HorizontalAlignment="Left" Width="150" Click="incluirOperacaoButton_Click" />
                 </DockPanel>
                 <DockPanel>
                     <DataGrid Name="movimentacaoDataGrid" AutoGenerateColumns="False" IsReadOnly="True" 

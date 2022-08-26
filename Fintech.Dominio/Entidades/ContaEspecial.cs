@@ -9,9 +9,9 @@
 
         public decimal Limite { get; set; }
 
-        public override void EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
+        public override Movimento EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
         {
-            base.EfetuarOperacao(valor, operacao, Limite);
+            return base.EfetuarOperacao(valor, operacao, Limite);
         }
     }
 }
