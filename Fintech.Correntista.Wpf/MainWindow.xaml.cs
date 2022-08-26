@@ -48,6 +48,9 @@ namespace Fintech.Correntista.Wpf
 
             bancoComboBox.Items.Add(banco1);
             bancoComboBox.Items.Add(new Banco { Nome = "Banco Dois", Numero = 210 });
+
+            operacaoComboBox.Items.Add(Operacao.Deposito);
+            operacaoComboBox.Items.Add(Operacao.Saque);
         }
 
         private void incluirClienteButton_Click(object sender, RoutedEventArgs e)
@@ -88,13 +91,17 @@ namespace Fintech.Correntista.Wpf
 
         private void SelecionarClienteButtonClick(object sender, RoutedEventArgs e)
         {
-            var botaoClicado = (Button)sender;
-            clienteSelecionado = (Cliente)botaoClicado.DataContext;
-            //this.clienteSelecionado = (Cliente)clienteSelecionado;
+            SelecionarCliente(sender);
 
             clienteTextBox.Text = $"{clienteSelecionado.Nome} - {clienteSelecionado.Cpf}";
 
             contasTabItem.Focus();
+        }
+
+        private void SelecionarCliente(object sender)
+        {
+            var botaoClicado = (Button)sender;
+            clienteSelecionado = (Cliente)botaoClicado.DataContext;
         }
 
         private void tipoContaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -158,6 +165,39 @@ namespace Fintech.Correntista.Wpf
             dvContaTextBox.Clear();
             tipoContaComboBox.SelectedIndex = -1;
             limiteTextBox.Clear();
+        }
+
+        private void SelecionarContaButtonClick(object sender, RoutedEventArgs e)
+        {
+            SelecionarCliente(sender);
+
+            contaTextBox.Text = $"{clienteSelecionado.Nome} - {clienteSelecionado.Cpf}";
+
+            contaComboBox.ItemsSource = clienteSelecionado.Contas;
+            contaComboBox.Items.Refresh();
+
+            LimparControlesOperacoes();
+
+            operacaoTabItem.Focus();
+        }
+
+        private void LimparControlesOperacoes()
+        {
+            contaComboBox.SelectedIndex = -1;
+            operacaoComboBox.SelectedIndex = -1;
+            valorTextBox.Clear();
+            movimentacaoDataGrid.ItemsSource = null;
+            saldoTextBox.Clear();
+        }
+
+        private void contaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (contaComboBox.SelectedIndex == -1) return;
+            
+            var conta = (Conta)contaComboBox.SelectedItem;
+
+            movimentacaoDataGrid.ItemsSource = conta.Movimentos;
+            saldoTextBox.Text = conta.Saldo.ToString();
         }
     }
 }

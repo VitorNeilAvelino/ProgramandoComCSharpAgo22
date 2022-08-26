@@ -48,13 +48,16 @@
   <Class Name="Fintech.Dominio.Entidades.Conta">
     <Position X="5.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAQAAAAQgAAIAAAABAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAACAAAAAAQAAAAQgAAIAAAABAAA=</HashCode>
       <FileName>Entidades\Conta.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Agencia" />
       <Property Name="Cliente" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Movimentos" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Fintech.Dominio.Entidades.Poupanca" Collapsed="true">
     <Position X="6.25" Y="6.75" Width="1.5" />
@@ -68,6 +71,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Entidades\ContaEspecial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fintech.Dominio.Entidades.Movimento">
+    <Position X="8.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAEAAAABBAAAQAAAAAAgAA=</HashCode>
+      <FileName>Entidades\Movimento.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Fintech.Dominio.Entidades.Sexo" Collapsed="true">
