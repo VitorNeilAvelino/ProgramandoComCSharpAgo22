@@ -44,7 +44,8 @@ namespace Fintech.Repositorios.SistemaArquivos
                 var propriedadeNumeroAgencia = Convert.ToInt32(propriedades[1]);
                 var propriedadeNumeroConta = Convert.ToInt32(propriedades[2]);
                 var data = Convert.ToDateTime(propriedades[3]);
-                var operacao = (Operacao)Convert.ToInt32(propriedades[4]);
+                //var operacao = (Operacao)Convert.ToInt32(propriedades[4]);
+                Enum.TryParse(propriedades[4], out Operacao operacao);
                 var valor = Convert.ToDecimal(propriedades[5]);
 
                 if (numeroAgencia == propriedadeNumeroAgencia && numeroConta == propriedadeNumeroConta)
