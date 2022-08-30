@@ -2,6 +2,7 @@
 using Fintech.Repositorios.SistemaArquivos;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -206,19 +207,43 @@ namespace Fintech.Correntista.Wpf
 
         private void incluirOperacaoButton_Click(object sender, RoutedEventArgs e)
         {
-            var conta = (Conta)contaComboBox.SelectedItem;
-            var operacao = (Operacao)operacaoComboBox.SelectedItem;
-            var valor = Convert.ToDecimal(valorTextBox.Text);
-            //var valor = (decimal)valorTextBox.Text;
+            try
+            {
+                var conta = (Conta)contaComboBox.SelectedItem;
+                var operacao = (Operacao)operacaoComboBox.SelectedItem;
+                var valor = Convert.ToDecimal(valorTextBox.Text);
+                //var valor = (decimal)valorTextBox.Text;
 
-            var movimento = conta.EfetuarOperacao(valor, operacao);
+                var movimento = conta.EfetuarOperacao(valor, operacao);
 
-            repositorio.Inserir(movimento);
+                repositorio.Inserir(movimento);
 
-            movimentacaoDataGrid.ItemsSource = conta.Movimentos;
-            movimentacaoDataGrid.Items.Refresh();
+                movimentacaoDataGrid.ItemsSource = conta.Movimentos;
+                movimentacaoDataGrid.Items.Refresh();
 
-            saldoTextBox.Text = conta.Saldo.ToString();
+                saldoTextBox.Text = conta.Saldo.ToString();
+            }
+            catch (FileNotFoundException exception)
+            {
+                MessageBox.Show($"O arquivo {exception.FileName} não foi encontrado.");
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                MessageBox.Show($"O diretório {Properties.Settings.Default.CaminhoArquivoMovimento} não foi encontrado.");
+            }
+            catch (SaldoInsuficienteException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eita! Algo deu errado, sua operação não foi realizada e logo teremos uma solução.");
+                //Logar(ex); // log4net, Serilog, Microsoft Logging.
+            }
+            finally
+            {
+                // É sempre executado! Mesmo se houver algum return no código.
+            }
         }
     }
 }
