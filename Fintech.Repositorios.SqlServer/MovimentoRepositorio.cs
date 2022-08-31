@@ -16,6 +16,31 @@ namespace Fintech.Repositorios.SqlServer
             this.stringConexao = stringConexao;
         }
 
+        public void Atualizar(Movimento movimento)
+        {
+            var instrucao = @"Update Movimento
+                                        set Data = @Data,
+                                             Valor = @Valor,
+                                             Operacao = @Operacao
+                                        where Id = @Id";
+
+            using (var conexao = new SqlConnection(stringConexao)) // descarte seguro de memória.
+            {
+                conexao.Execute(instrucao, movimento);
+            }
+        }
+
+        public void Excluir(int id)
+        {
+            var instrucao = @"Delete Movimento
+                                        where Id = @Id";
+
+            using (var conexao = new SqlConnection(stringConexao)) // descarte seguro de memória.
+            {
+                conexao.Execute(instrucao, new { Id = id });
+            }
+        }
+
         public void Inserir(Movimento movimento)
         {
             var instrucao = @$"Insert Movimento(IdConta, Data, Valor, Operacao)
