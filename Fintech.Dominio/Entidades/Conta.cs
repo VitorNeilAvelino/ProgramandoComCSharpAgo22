@@ -7,6 +7,8 @@ namespace Fintech.Dominio.Entidades
     {
         public int Numero { get; set; }
         public string DigitoVerificador { get; set; }
+        
+        // ToDo: encapsulamento (get, set, private).
         public decimal Saldo 
         {
             get { return TotalDeposito - TotalSaque; }

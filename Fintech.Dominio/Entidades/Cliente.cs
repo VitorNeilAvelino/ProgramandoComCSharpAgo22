@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Fintech.Dominio.Entidades
 {
+    // ToDo: OO - abstração (classe).
     public class Cliente
     {
         public string Cpf { get; set; }

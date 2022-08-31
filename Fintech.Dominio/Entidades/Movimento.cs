@@ -4,6 +4,8 @@ namespace Fintech.Dominio.Entidades
 {
     public class Movimento
     {
+        // ToDo: OO - polimorfismo por sobrecarga (métodos com mesmo nome dentro da classe).
+
         /// <summary>
         /// Construtor sem parâmetros - requisito do Dapper (Selecionar).
         /// </summary>
