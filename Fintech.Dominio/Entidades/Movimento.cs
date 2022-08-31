@@ -4,10 +4,23 @@ namespace Fintech.Dominio.Entidades
 {
     public class Movimento
     {
+        /// <summary>
+        /// Construtor sem parâmetros - requisito do Dapper.
+        /// </summary>
+        public Movimento()
+        {
+
+        }
+
         public Movimento(decimal valor, Operacao operacao)
         {
             Valor = valor;
             Operacao = operacao;
+        }
+
+        public Movimento(decimal valor, Operacao operacao, Conta conta) : this(valor, operacao)
+        {
+            Conta = conta;
         }
 
         public int Id { get; set; }
