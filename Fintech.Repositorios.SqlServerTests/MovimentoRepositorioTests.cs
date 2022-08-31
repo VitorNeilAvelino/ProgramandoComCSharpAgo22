@@ -1,10 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Fintech.Repositorios.SqlServer;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Fintech.Dominio.Entidades;
 
 namespace Fintech.Repositorios.SqlServer.Tests

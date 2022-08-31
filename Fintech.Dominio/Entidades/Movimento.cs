@@ -5,7 +5,7 @@ namespace Fintech.Dominio.Entidades
     public class Movimento
     {
         /// <summary>
-        /// Construtor sem parâmetros - requisito do Dapper.
+        /// Construtor sem parâmetros - requisito do Dapper (Selecionar).
         /// </summary>
         public Movimento()
         {

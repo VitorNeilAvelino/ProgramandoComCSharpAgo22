@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using Fintech.Dominio.Entidades;
 using Fintech.Dominio.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
