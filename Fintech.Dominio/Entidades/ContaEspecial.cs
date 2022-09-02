@@ -2,6 +2,14 @@
 {
     public class ContaEspecial : ContaCorrente
     {
+        /// <summary>
+        /// Construtor sem parâmetros: requisito do Entity Framework.
+        /// </summary>
+        public ContaEspecial()
+        {
+
+        }
+
         public ContaEspecial(Agencia agencia, int numero, string digitoVerificador, decimal limite) : base(agencia, numero, digitoVerificador)
         {
             Limite = limite;

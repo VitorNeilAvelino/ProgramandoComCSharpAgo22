@@ -5,6 +5,15 @@ namespace Fintech.Dominio.Entidades
 {
     public abstract class Conta
     {
+        /// <summary>
+        /// Construtor sem parâmetros: requisito do Entity Framework.
+        /// </summary>
+        public Conta()
+        {
+
+        }
+
+        public int Id { get; set; }
         public int Numero { get; set; }
         public string DigitoVerificador { get; set; }
         
