@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace CSharp.Capitulo10.DelegateLambda.Testes
 {
@@ -34,7 +35,8 @@ namespace CSharp.Capitulo10.DelegateLambda.Testes
             //    return x * y;
             //};
 
-            EfetuarOperacao multiplicacao = (x, y) => x * y;
+            //EfetuarOperacao multiplicacao = (x, y) => x * y;
+            Func<int, int, int> multiplicacao = (x, y) => x * y;
 
             Assert.IsTrue(multiplicacao(6, 3) == 18);
             
