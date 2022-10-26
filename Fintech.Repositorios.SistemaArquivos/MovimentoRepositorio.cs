@@ -123,6 +123,28 @@ namespace Fintech.Repositorios.SistemaArquivos
             linhas[numeroLinha - 1] = registro;
             
             File.WriteAllLines(Caminho, linhas);
+        }        
+
+        public void Excluir(Guid guid)
+        {
+            string linha;
+            string novaLinha = "";
+
+            var texto = File.OpenText(Caminho);
+
+            while ((linha = texto.ReadLine()) != null)
+            {
+                var propriedades = linha.Split('|');
+
+                if (propriedades[0] != guid.ToString())
+                {
+                    novaLinha += linha + Environment.NewLine;
+                }
+            }
+
+            texto.Close();
+
+            File.WriteAllText(Caminho, novaLinha);
         }
     }
 }

@@ -183,5 +183,11 @@ namespace Fintech.Repositorios.SistemaArquivos.Tests
 
             repositorio.Atualizar(movimento);
         }
+
+        [TestMethod()]
+        public void ExcluirTest()
+        {
+            repositorio.Excluir(new Guid("0234f3b3-4c35-4f78-bde7-1e3bbfc90d1d"));
+        }
     }
 }
