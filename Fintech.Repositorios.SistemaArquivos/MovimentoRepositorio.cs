@@ -99,5 +99,30 @@ namespace Fintech.Repositorios.SistemaArquivos
 
             return movimentos;
         }
+
+        public void Atualizar(Movimento movimento)
+        {
+            var registro = $"{movimento.Guid}|{movimento.Conta.Agencia.Numero}|{movimento.Conta.Numero}|" +
+                $"{movimento.Data}|{(int)movimento.Operacao}|{movimento.Valor}";
+
+            var linhas = File.ReadAllLines(Caminho);
+            var numeroLinha = 0;
+
+            foreach (var linha in linhas)
+            {
+                var propriedades = linha.Split('|');
+
+                numeroLinha++;
+
+                if (propriedades[0] == movimento.Guid.ToString())
+                {
+                    break;
+                }
+            }    
+
+            linhas[numeroLinha - 1] = registro;
+            
+            File.WriteAllLines(Caminho, linhas);
+        }
     }
 }

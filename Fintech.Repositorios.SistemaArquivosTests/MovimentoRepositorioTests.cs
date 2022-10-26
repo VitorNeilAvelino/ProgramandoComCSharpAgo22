@@ -163,12 +163,25 @@ namespace Fintech.Repositorios.SistemaArquivos.Tests
         {
             var agrupamento = repositorio.Selecionar(123, 456)
                 .GroupBy(m => m.Operacao)
-                .Select(g => new { Operacao = g.Key,  Total = g.Sum(m => m.Valor)});
+                .Select(g => new { Operacao = g.Key, Total = g.Sum(m => m.Valor) });
 
             foreach (var item in agrupamento)
             {
                 Console.WriteLine($"{item.Operacao}: {item.Total}");
             }
+        }
+
+        [TestMethod()]
+        public void AtualizarTest()
+        {
+            var movimento = repositorio.Selecionar(123, 456).First();
+
+            var conta = new ContaCorrente(new Agencia { Numero = 123 }, 456, "X");
+
+            movimento.Valor = 18.11m;
+            movimento.Conta = conta;
+
+            repositorio.Atualizar(movimento);
         }
     }
 }
